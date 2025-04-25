@@ -1,1 +1,34 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    /*Все что касается шрифтов */
+    --regular_font: 'Inter Regular';
+    --accent_font: 'Press Start 2P Regular';
+    --text_weight: 400;
+    --title_weight: 700;
+    --heading_size: 4.06rem;
+    --subheading_size: 1.44rem;
+    --text_size: 1.13rem;
+    --text_line_height: 1.38rem;
+    /*Отступы */
+    --header_top_bottom_padding: 8rem;
+    --header_left_right_padding: 7.531rem;
+    --header_cards_gap: 6.5rem;
+    --page_top_margin: 6.375rem;
+    --title_padding_top_bottom: 0.188rem;
+    --title_padding_left: 0.625rem;
+    --title_padding_right: 1.5rem;
+    --card_content_padding: 1.563rem;
+    /*Размеры */
+    --header_size_inline: 43.75rem;
+    --header_size_block: 23rem;
+    --card_size_inline: 43.5rem;
+    --card_size_block: 59.937rem;
+    --img_size: 43.5rem;
+    --border_size: 0.125rem;
+    --button_like_size_inline: 10.556vw;;
+    --button_like_size_block: 2.153vw;
+    /*Цвета */
+    --background_color: #fff;
+    --card_color: #fff;
+    --border_color: #000;
+}

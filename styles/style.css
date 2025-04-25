@@ -11,6 +11,81 @@
 */
 
 .page {
+  margin-top: var(--page_top_margin);
   min-inline-size: 320px;
-  min-block-size: 100dvb;
+  /*min-block-size: 100dvb;   может мне это нахуй не надо?   */
+  font-family: var(--regular_font);
+  display: grid;
+  row-gap: var(--header_cards_gap); /*везде потом добавить фоллбеки*/
+  justify-items: center;
+  font-variation-settings: "wght" var(--text_weight);
+  font-size: var(--text_size);
+  line-height: var(--text_line_height);
+  background-color: aquamarine; /*это потом заменить*/
 }
+
+  .header {
+    display: block;
+    inline-size: var(--header_size_inline);
+    min-block-size: var(--header_size_block);
+    background-color: var(--card_color);
+    text-align: center;
+    line-height: normal;
+    border: solid var(--border_size) var(--border_color);
+}
+
+  .header div {
+    padding: var(--header_top_bottom_padding) var(--header_left_right_padding);
+  }
+
+  .header h1 {
+    font-family: var(--accent_font);
+    font-size: var(--heading_size);
+  }
+
+  .header h2 {
+    font-family: var(--accent_font);
+    font-size: var(--subheading_size);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    inline-size: var(--card_size_inline);
+    min-block-size: var(--card_size_block);
+    background-color: var(--card_color);
+    border: solid var(--border_size) var(--border_color);
+  }
+
+  .card img {
+    inline-size: var(--img_size);
+    block-size: var(--img_size);
+  }
+
+  .card h3 {
+    display: block;
+    font-variation-settings: "wght" var(--title_weight);
+    padding: var(--title_padding_top_bottom) var(--title_padding_right) var(--title_padding_top_bottom) var(--title_padding_left);
+  }
+
+  .card div {
+    display: grid;
+    padding: var(--card_content_padding);
+  }
+
+  .card div:nth-of-type(1) {
+    gap: var(--card_content_padding);
+  }
+
+  .card div:nth-of-type(2) {
+    justify-content: end;
+  }
+
+  .card__icon-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    min-inline-size: var(--button_like_size_inline);
+    block-size: var(--button_like_size_block);
+    justify-content: space-evenly;
+  }

@@ -25,7 +25,7 @@
 }
 
 .filter_grayscale {
-  filter: grayscale(80%);
+  filter: grayscale(90%) ;
 }
 
 .filter_grayscale:hover {
@@ -33,7 +33,7 @@
 }
 
 .filter_saturation {
-  filter: saturate(370%);
+  filter: brightness(30%);
 }
 
 .filter_saturation:hover {
@@ -41,7 +41,7 @@
 }
 
 .filter_hue_rotation {
-  filter: hue-rotate(20deg);
+  filter: contrast(20%);
 }
 
 .filter_hue_rotation:hover {
@@ -49,7 +49,7 @@
 }
 
 .filter_invert {
-  filter: invert(0.8);
+  filter: saturate(200%);
 }
 
 .filter_invert:hover {
@@ -57,7 +57,7 @@
 }
 
 .filter_sepia {
-  filter: sepia(85%);
+  filter: invert(85%);
 }
 
 .filter_sepia:hover {
@@ -73,13 +73,12 @@
 }
 
 .filter_multi {
-  filter: blur(3px) contrast(60%) hue-rotate(100deg);
+  filter: contrast(70%) saturate(160%) invert() hue-rotate(1.5turn);
 }
 
 .filter_multi:hover {
   filter: none;
 }
-
   .main {
     display: flex;
     flex-direction: column;
@@ -121,12 +120,14 @@
   .card h3 {
     font-variation-settings: "wght" var(--title_weight);
     font-size: var(--text_size);
+    border-bottom: solid var(--border_size) var(--border_color);
     padding: var(--title_padding_top) var(--title_padding_right) var(--title_padding_bottom) var(--title_padding_left);
   }
   .card_img {
     block-size: var(--img_size);
     inline-size: var(--img_size);
     object-fit: cover;
+    object-position: center;
     transition: 0.3s;
   }
 
@@ -166,6 +167,7 @@
     gap: var(--card_content_padding);
     overflow: hidden;
     padding: var(--card_content_padding);
+    border-top: solid var(--border_size) var(--border_color);
   }
 
   .card-button_like {

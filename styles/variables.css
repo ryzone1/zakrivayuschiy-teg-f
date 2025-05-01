@@ -5,30 +5,74 @@
     --accent_font: 'Press Start 2P Regular';
     --text_weight: 400;
     --title_weight: 700;
-    --heading_size: 4.06rem;
-    --subheading_size: 1.44rem;
-    --text_size: 1.13rem;
-    --text_line_height: 1.38rem;
+    --heading_font_size: clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem);
+    --subheading_font_size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
+    --text_size: 1.125rem;
+    --button_size: 0.875rem;
     /*Отступы */
-    --header_top_bottom_padding: 8rem;
-    --header_left_right_padding: 7.531rem;
-    --header_cards_gap: 6.5rem;
-    --page_top_margin: 6.375rem;
-    --title_padding_top_bottom: 0.188rem;
-    --title_padding_left: 0.625rem;
-    --title_padding_right: 1.5rem;
-    --card_content_padding: 1.563rem;
+    --header_gap: 1.25rem;
+    --page_top_margin: 7.083dvh;
+    --header_padding_top_bottom: 8.9%;
+    --header_padding_left_right: 8.4%;
+    --header_cards_gap: 7.222dvh;
+    --title_padding_top: 0.333vh;
+    --title_padding_bottom: 0.333vh;
+    --title_padding_right: 1.458vw;
+    --title_padding_left: 0.694vw;
+    --card_content_padding: 25px;
+    --cards_gap: 3.75dvh;
+    --button_text_padding: 1%;
+    --button_gap: 12px;
+    --section_gap: 3.75dvh;
+    --section_bottom_gap: 7.292dvh;
+    --decoration_text_paddings: 1.736dvh;
+    --popup_padding_tb: 3.125vh;
+    --popup_padding_lr: 3.125vh;
+    --popup_content_gap: 1.389vw;
     /*Размеры */
-    --header_size_inline: 43.75rem;
-    --header_size_block: 23rem;
-    --card_size_inline: 43.5rem;
-    --card_size_block: 59.937rem;
-    --img_size: 43.5rem;
-    --border_size: 0.125rem;
-    --button_like_size_inline: 10.556vw;;
-    --button_like_size_block: 2.153vw;
+    --card_size: clamp(375px, calc(23.4375rem + ((1vw - 3.75px) * 30.1408)), 696px);
+    --border_size: 2px;
+    --img_size: 100%;
+    --button_like_size_inline: 130px;
+    --button_like_size_block: 38px;
+    --icon_like_size_inline: 1.875dvw;
+    --icon_like_size_block: 1.667dvh;
+    --button_no_icon_size_inline: 9.028dvw;
+    --button_save_size_inline: 335px;
+    --button_save_size_block: 55px;
+    --icon_save_size: 100%;
+    --icon_popup_save_size: 2.708dvh;
+    --popup_size_inline: calc(22.3125rem + ((1vw - 0.234375rem) * 0));
+    --popup_size_block: 13.264dvh;
+    --close_button_size_inline: 20.347dvw;
+    --close_button_size_block: 2.639dvh;
+    --popup_text_size: calc(14.625rem + ((1vw - 3.75px) * 0));
     /*Цвета */
     --background_color: #fff;
     --card_color: #fff;
+    --accent_color: #000;
+    --main_color: #fff;
     --border_color: #000;
+    --decoration_text_color: rgba(0, 0, 0, 0.5);
+    --decoration_text_stroke: rgba(255, 255, 255, 0.5);
+    --button_hover_color: rgb(0, 0, 0);
+    --button_save_direction: row;
 }
+
+    @media (width <= 376px) {
+    :root {
+        --header_padding_top_bottom: 32%;
+        --header_padding_left_right: 3.7%;
+        --button_save_size_inline: 306px;
+        --button_save_size_block: 84px;
+        --button_save_direction: column;
+        --popup_padding_tb: 4.498dvh;
+        --popup_padding_lr: 10.667dvw;
+        --popup_text_size: 100%;
+        --popup_content_gap: 5.333dvw;
+        --title_padding_top: 0.6dvh;
+        --title_padding_bottom: 0.9dvh;
+        --title_padding_right: 3.2dvw;
+        --title_padding_left: 3.2dvw;
+    }
+    }

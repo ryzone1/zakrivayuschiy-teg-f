@@ -10,6 +10,23 @@
 
 */
 
+@keyframes scale {
+  from {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  to {
+    transform: scale(1.25);
+    transform-origin: center;
+  }
+}
+
+@keyframes sparks {
+  to {
+    opacity: 100%;
+  }
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -22,6 +39,7 @@
   gap: var(--header_cards_gap); /*везде потом добавить фоллбеки*/
   justify-items: center;
   font-variation-settings: "wght" var(--text_weight);
+  background-image: var(--background_gradient);
 }
 
 .filter_grayscale {
@@ -129,11 +147,7 @@
     object-fit: cover;
     object-position: center;
     transition: 0.3s;
-  }
 
-  .image_border {
-    border-bottom: solid var(--border_size) var(--border_color);
-    border-top: solid var(--border_size) var(--border_color);
   }
 
   .card_container {
@@ -143,9 +157,10 @@
   }
 
   .image_container {
+    display: flex;
     position: relative;
     overflow: hidden;
-    inline-size: 100%;
+    border-block-end: solid var(--border_size) var(--border_color);
   }
 
   .decoration_text {
@@ -167,7 +182,6 @@
     gap: var(--card_content_padding);
     overflow: hidden;
     padding: var(--card_content_padding);
-    border-top: solid var(--border_size) var(--border_color);
   }
 
   .card-button_like {
@@ -183,22 +197,93 @@
     gap: var(--button_gap);
   }
 
-  .like-icon {
-    min-block-size: var(--icon_like_size_block);
-    align-self: center;
-    justify-self: flex-start;
+  .core {
+    transition-duration: 0.3s;
+  }
+
+  .contour {
+    transition-duration: 0.3s;
+  }
+
+  .main-body {
+    transition-delay: 0.05s;
+    transition-duration: 0.3s;
+  }
+
+  .heart:hover > .core {
+    --heart_core_color: #000;
+    transition-delay: 0.03s;
+    transition-duration: 0.3s;
+  }
+
+  .heart:hover > .main-body {
+    --heart_main-body_color: #000;
+    transition-duration: 0.3s;
+  }
+
+  .heart:active > .core {
+    --heart_core_color: #f00;
+    transition-delay: 0.03s;
+    transition-duration: 0.3s;
+  }
+
+  .heart:active > .main-body {
+    --heart_main-body_color: #f00;
+    transition-duration: 0.3s;
+  }
+
+  .like-icon.is-liked .core {
+    --heart_core_color: #f00;
+    transition-delay: 0.03s;
+    transition-duration: 0.3s;
+  }
+
+  .like-icon.is-liked .main-body {
+    --heart_main-body_color: #f00;
+    transition-duration: 0.3s;
+  }
+
+  .like-icon.is-liked .contour {
+    --heart_contour_color: #f00;
+    transition-delay: 0.06s;
+    transition-duration: 0.3s;
+  }
+
+  .like-icon.is-liked .heart {
+    animation: scale 0.3s ease-in 0.1s 1;
+  }
+
+  .like-icon.is-liked .sparks {
+    animation: sparks 0.3s ease-in 0.3s 1;
+  }
+
+  .like-icon:focus {
+    outline: none;
+  }
+
+  .sparks {
+    opacity: 0;
   }
 
   .button {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     display: block;
     font-family: var(--accent_font);
     font-size: var(--button_size);
-    transition: 0.6s;
-    border: var(--border_size) solid var(--accent_color);
-    color: var(--accent_color);
-    background-color: var(--main_color);
+    transition: 0.5s ease-in-out;
+    border: var(--border_size) solid var(--main_color);
+    color: var(--main_color);
+    background-color: var(--accent_color);
+    mix-blend-mode: difference;
+  }
+
+  .button:focus {
+    outline: none;
+  }
+
+  .button:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent_color);
   }
 
   .button::after {
@@ -210,23 +295,47 @@
     display: block;
     width: 0%;
     height: 100%;
-    background-color: var(--accent_color);
-    transition: width 0.6s, background-color 0.5s;
+    background-color: var(--main_color);
+    transition: width 0.5s, background-color 0.5s ease-in-out;
   }
 
   .button:hover::after {
     width: 100%;
-    background-color: var(--accent_color);
+    background-color: var(--main_color);
+  }
+
+  .button:hover > span {
+    mix-blend-mode: difference;
+  }
+
+  .card__like-button {
+    block-size: var(--button_like_size_block);
+    min-inline-size: var(--button_like_size_inline);
   }
 
   .button__text {
-    block-size: var(--button_like_size_block);
-    min-inline-size: var(--button_like_size_inline);
     padding-block-start: 10px;
   }
 
-  .button__text:hover {
-    color: var(--main_color);
+  .card__icon-button:focus {
+    outline: none;
+  }
+
+  .card__icon-button:focus-visible > .button__text {
+    box-shadow: 2px 2px 0 var(--accent_color);
+  }
+
+  .card__icon-button:focus-visible > .like-icon {
+    border: 2px solid var(--accent_color);
+  }
+
+  .save_section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .save_container {
+    background-color: var(--main_color);
   }
 
   .button_save {
@@ -238,6 +347,15 @@
     gap: var(--button_gap);
     align-items: center;
     justify-content: center;
+    mix-blend-mode: difference;
+  }
+
+  .button_save:focus {
+    outline: none;
+  }
+
+  .button_save:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent_color);
   }
 
   .button_save:hover {
@@ -251,7 +369,8 @@
 
   .save_icon {
     transition: 0.6s;
-    color: inherit;
+    mix-blend-mode: difference;
+    inline-size: var(--icon_save_size);
   }
 
   dialog {
@@ -304,6 +423,14 @@
     inline-size: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
+  }
+
+  .close-button:focus {
+    outline: none;
+  }
+
+  .close-button:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent_color);
   }
 
   .close-button:hover {

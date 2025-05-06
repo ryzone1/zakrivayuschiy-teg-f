@@ -11,7 +11,7 @@
     --button_size: 0.875rem;
     /*Отступы */
     --header_gap: 1.25rem;
-    --page_top_margin: 7.083dvh;
+    --page_top_margin: 7.083vh;
     --header_padding_top_bottom: 8.9%;
     --header_padding_left_right: 8.4%;
     --header_cards_gap: 10.417vh;
@@ -21,11 +21,10 @@
     --title_padding_left: 0.694vw;
     --card_content_padding: 25px;
     --cards_gap: 5.208vh;
-    --button_text_padding: 1%;
     --button_gap: 7px;
     --section_gap: 5.208vh;
     --section_bottom_gap: 10.417vh;
-    --decoration_text_paddings: 1.736dvh;
+    --decoration_text_paddings: 1.736vh;
     --popup_padding_tb: 3.125vh;
     --popup_padding_lr: 3.125vh;
     --popup_content_gap: 1.389vw;
@@ -37,29 +36,21 @@
     --button_like_size_block: 38px;
     --icon_like_size_inline: 36px;
     --icon_like_size_block: 39px;
-    --button_no_icon_size_inline: 9.028dvw;
     --button_save_size_inline: 335px;
     --button_save_size_block: 55px;
     --icon_save_size: 21px;
-    --icon_popup_save_size: 2.708dvh;
     --popup_size_inline: calc(22.3125rem + ((1vw - 0.234375rem) * 0));
-    --popup_size_block: 13.264dvh;
-    --close_button_size_inline: 20.347dvw;
-    --close_button_size_block: 2.639dvh;
+    --close_button_size_block: 2.639vh;
     --popup_text_size: calc(14.625rem + ((1vw - 3.75px) * 0));
     /*Цвета */
-    --background_color: #fff;
-    --card_color: #fff;
     --accent_color: #000;
     --heart_contour_color: #000;
     --heart_main-body_color: transparent;
     --heart_core_color: transparent;
     --heart_sparks_color: #f00;
     --main_color: #fff;
-    --border_color: #000;
     --decoration_text_color: rgba(0, 0, 0, 0.5);
     --decoration_text_stroke: rgba(255, 255, 255, 0.5);
-    --button_hover_color: rgb(0, 0, 0);
     /*Разное */
     --button_save_direction: row;
     --background_gradient: 

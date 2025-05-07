@@ -10,40 +10,23 @@
 
 */
 
-@keyframes scale {
-  from {
-    transform: scale(1);
-    transform-origin: center;
-  }
-
-  to {
-    transform: scale(1.25);
-    transform-origin: center;
-  }
-}
-
-@keyframes sparks {
-  to {
-    opacity: 100%;
-  }
-}
-
 .page {
+  position: relative;
+  z-index: -1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: var(--page_top_margin);
+  margin-top: var(--page_top_margin, 100px);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--regular_font);
-  font-size: var(--text_size);
-  gap: var(--header_cards_gap);
-  /*везде потом добавить фоллбеки*/
+  font-family: var(--regular_font, 'Inter', system-ui, Arial, sans-serif);
+  font-size: var(--text_size, 1.125rem);
+  gap: var(--header_cards_gap, 10.417vh);
   justify-items: center;
-  font-variation-settings: "wght" var(--text_weight);
+  font-variation-settings: "wght" var(--text_weight, 400);
   background-image: var(--background_gradient);
-  background-color: var(--main_color);
-  background-position: fixed;
+  background-color: var(--main_color, #fff);
+  background-attachment: fixed;
 }
 
 .filter_grayscale {
@@ -105,52 +88,52 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: var(--section_gap);
-  padding-bottom: var(--section_bottom_gap);
-  inline-size: var(--card_size);
+  gap: var(--section_gap, 5.208vh);
+  padding-bottom: var(--section_bottom_gap, 10.417vh);
+  inline-size: var(--card_size, clamp(375px, calc(23.4375rem + ((1vw - 3.75px) * 30.1408)), 696px));
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--header_gap);
+  gap: var(--header_gap, 1.25rem);
   background-color: inherit;
-  border: solid var(--border_size) var(--accent_color);
-  font-family: var(--accent_font);
+  border: solid var(--border_size, 2px) var(--accent_color, #000);
+  font-family: var(--accent_font, 'PressStart2P', Impact, fantasy);
   text-transform: uppercase;
   text-align: center;
-  inline-size: var(--card_size);
-  padding: var(--header_padding_top_bottom) var(--header_padding_left_right);
+  inline-size: var(--card_size, clamp(375px, calc(23.4375rem + ((1vw - 3.75px) * 30.1408)), 696px));
+  padding: var(--header_padding_top_bottom, 8.9%) var(--header_padding_left_right, 8.4%);
 }
 
 .header h1 {
   display: block;
-  font-size: var(--heading_font_size);
+  font-size: var(--heading_font_size, clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem));
 }
 
 .header h2 {
   display: block;
-  font-size: var(--subheading_font_size);
+  font-size: var(--subheading_font_size, clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem));
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--main_color);
-  border: solid var(--border_size) var(--accent_color);
+  background-color: var(--main_color, #fff);
+  border: solid var(--border_size, 2px) var(--accent_color, #000);
 }
 
-.card h3 {
-  font-variation-settings: "wght" var(--title_weight);
-  font-size: var(--text_size);
-  border-bottom: solid var(--border_size) var(--accent_color);
-  padding: var(--title_padding_top) var(--title_padding_right) var(--title_padding_bottom) var(--title_padding_left);
+.card h2 {
+  font-variation-settings: "wght" var(--title_weight, 700);
+  font-size: var(--text_size, 1.125rem);
+  border-bottom: solid var(--border_size, 2px) var(--accent_color, #000);
+  padding: var(--title_padding_top, 0.333vh) var(--title_padding_right, 1.458vw) var(--title_padding_bottom, 0.333vh) var(--title_padding_left, 0.694vw);
 }
 
 .card_img {
-  block-size: var(--img_size);
-  inline-size: var(--img_size);
+  block-size: var(--img_size, 100%);
+  inline-size: var(--img_size, 100%);
   object-fit: cover;
   object-position: center;
   transition: filter 1s;
@@ -160,37 +143,37 @@
 .card_container {
   display: flex;
   flex-direction: column;
-  gap: var(--cards_gap);
+  gap: var(--cards_gap, 5.208vh);
 }
 
 .image_container {
   display: flex;
   position: relative;
   overflow: hidden;
-  border-block-end: solid var(--border_size) var(--accent_color);
+  border-block-end: solid var(--border_size, 2px) var(--accent_color, #000);
 }
 
 .decoration_text {
   position: absolute;
   z-index: 1;
-  top: var(--decoration_text_paddings);
-  right: var(--decoration_text_paddings);
-  color: var(--decoration_text_color);
-  font-size: var(--save_button_size);
-  font-family: var(--accent_font);
+  top: var(--decoration_text_paddings, 2.4vh);
+  right: var(--decoration_text_paddings, 2.4vh);
+  color: var(--decoration_text_color, rgba(0, 0, 0, 0.5));
+  font-size: var(--button_size, 0.875rem);
+  font-family: var(--accent_font, 'PressStart2P', Impact, fantasy);
   mix-blend-mode: hard-light;
   text-shadow:
-    -1px 0 var(--decoration_text_stroke),
-    0 1px var(--decoration_text_stroke),
-    1px 0 var(--decoration_text_stroke),
-    0 -1px var(--decoration_text_stroke);
+    -1px 0 var(--decoration_text_stroke, rgba(255, 255, 255, 0.5)),
+    0 1px var(--decoration_text_stroke, rgba(255, 255, 255, 0.5)),
+    1px 0 var(--decoration_text_stroke, rgba(255, 255, 255, 0.5)),
+    0 -1px var(--decoration_text_stroke, rgba(255, 255, 255, 0.5));
 }
 
 @supports((text-stroke: 1px var(--decoration_text_stroke)) or (-webkit-text-stroke: 1px var(--decoration_text_stroke))) {
   .decoration_text {
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--decoration_text_stroke);
-    text-stroke: 1px var(--decoration_text_stroke);
+    -webkit-text-stroke-color: var(--decoration_text_stroke, rgba(255, 255, 255, 0.5));
+    text-stroke: 1px var(--decoration_text_stroke, rgba(255, 255, 255, 0.5));
     text-shadow: none;
   }
 }
@@ -198,9 +181,10 @@
 .card_text {
   display: flex;
   flex-direction: column;
-  gap: var(--card_content_padding);
+  gap: var(--card_content_padding, 25px);
   overflow: hidden;
-  padding: var(--card_content_padding);
+  padding: var(--card_content_padding, 25px);
+  font-variation-settings: "wght" var(--text_weight, 400);
 }
 
 .card-button_like {
@@ -213,59 +197,69 @@
   background-color: transparent;
   display: flex;
   justify-content: space-evenly;
-  gap: var(--button_gap);
+  gap: var(--button_gap, 7px);
 }
 
 .core {
   transition-duration: 0.3s;
+  transition-timing-function: linear;
+  transition-delay: 0.03s;
 }
 
 .contour {
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
 }
 
 .main-body {
-  transition-delay: 0.05s;
   transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .heart:hover>.core {
   --heart_core_color: #000;
-  transition-delay: 0.03s;
   transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .heart:hover>.main-body {
   --heart_main-body_color: #000;
   transition-duration: 0.3s;
+  transition-delay: 0.05s;
+  transition-timing-function: linear;
 }
 
 .heart:active>.core {
   --heart_core_color: #f00;
-  transition-delay: 0.03s;
   transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .heart:active>.main-body {
   --heart_main-body_color: #f00;
+  transition-delay: 0.05s;
   transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .like-icon.is-liked .core {
   --heart_core_color: #f00;
-  transition-delay: 0.03s;
   transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .like-icon.is-liked .main-body {
   --heart_main-body_color: #f00;
   transition-duration: 0.3s;
+  transition-delay: 0.05s;
+  transition-timing-function: linear;
 }
 
 .like-icon.is-liked .contour {
   --heart_contour_color: #f00;
   transition-delay: 0.06s;
   transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 .like-icon.is-liked .heart {
@@ -288,12 +282,12 @@
   position: relative;
   z-index: 1;
   display: block;
-  font-family: var(--accent_font);
-  font-size: var(--button_size);
-  transition: 0.5s ease-in-out;
-  border: var(--border_size) solid var(--main_color);
-  color: var(--main_color);
-  background-color: var(--accent_color);
+  font-family: var(--accent_font, 'PressStart2P', Impact, fantasy);
+  font-size: var(--button_size, 0.875rem);
+  transition: box-shadow 0.3s ease;
+  border: var(--border_size, 2px) solid var(--main_color, #fff);
+  color: var(--main_color, #fff);
+  background-color: var(--accent_color, #000);
   mix-blend-mode: difference;
 }
 
@@ -302,7 +296,7 @@
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent_color);
+  box-shadow: 2px 2px 0 var(--main_color, #fff);
 }
 
 .button::after {
@@ -314,13 +308,13 @@
   display: block;
   width: 0%;
   height: 100%;
-  background-color: var(--main_color);
+  background-color: var(--main_color, #fff);
   transition: width 0.5s, background-color 0.5s ease-in-out;
 }
 
 .button:hover::after {
   width: 100%;
-  background-color: var(--main_color);
+  background-color: var(--main_color, #fff);
 }
 
 .button:hover>span {
@@ -328,8 +322,8 @@
 }
 
 .card__like-button {
-  block-size: var(--button_like_size_block);
-  min-inline-size: var(--button_like_size_inline);
+  block-size: var(--button_like_size_block, 55px);
+  min-inline-size: var(--button_like_size_inline, 335px);
 }
 
 .button__text {
@@ -341,11 +335,11 @@
 }
 
 .card__icon-button:focus-visible>.button__text {
-  box-shadow: 2px 2px 0 var(--accent_color);
+  box-shadow: 2px 2px 0 var(--accent_color, #000);
 }
 
 .card__icon-button:focus-visible>.like-icon {
-  border: 2px solid var(--accent_color);
+  border: 2px solid var(--accent_color, #000);
 }
 
 .save_section {
@@ -354,31 +348,24 @@
 }
 
 .save_container {
-  background-color: var(--main_color);
+  background-color: var(--main_color, #fff);
 }
 
 .button_save {
   display: flex;
-  flex-direction: var(--button_save_direction);
+  flex-direction: var(--button_save_direction, row);
   justify-self: center;
-  block-size: var(--button_save_size_block);
-  min-inline-size: var(--button_save_size_inline);
-  gap: var(--button_gap);
+  block-size: var(--button_save_size_block, 55px);
+  min-inline-size: var(--button_save_size_inline, 335px);
+  gap: var(--button_gap, 7px);
   align-items: center;
   justify-content: center;
   mix-blend-mode: difference;
-}
-
-.button_save:focus {
-  outline: none;
+  
 }
 
 .button_save:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent_color);
-}
-
-.button_save:hover {
-  color: var(--main_color);
+  box-shadow: 2px 2px 0 var(--accent_color, #000);
 }
 
 .button_save_text {
@@ -389,7 +376,7 @@
 .save_icon {
   transition: 0.6s;
   mix-blend-mode: difference;
-  inline-size: var(--icon_save_size);
+  inline-size: var(--icon_save_size, 21px);
 }
 
 dialog {
@@ -397,13 +384,14 @@ dialog {
   inset: 0;
   transition: opacity 0.2s ease-in-out;
   display: grid;
-  row-gap: var(--popup_padding_tb);
-  inline-size: var(--popup_size_inline);
-  padding: var(--popup_padding_tb) var(--popup_padding_lr);
-  font-family: var(--accent_font);
-  font-size: var(--button_size);
+  row-gap: var(--popup_padding_tb, 3.125vh);
+  inline-size: var(--popup_size_inline, calc(22.3125rem + ((1vw - 0.234375rem) * 0)));
+  padding: var(--popup_padding_tb, 3.125vh) var(--popup_padding_lr, 3.125vh);
+  font-family: var(--accent_font, 'PressStart2P', Impact, fantasy);
+  font-size: var(--button_size, 0.875rem);
   text-transform: uppercase;
   justify-content: center;
+  overflow: auto;
 }
 
 dialog:not([open]) {
@@ -417,7 +405,7 @@ dialog::backdrop {
 
 .popup_content {
   display: flex;
-  gap: var(--popup_content_gap);
+  gap: var(--popup_content_gap, 1.389vw);
 }
 
 .save_icon_popup {
@@ -428,7 +416,7 @@ dialog::backdrop {
 .popup_text {
   display: inline-block;
   line-height: 150%;
-  inline-size: var(--popup_text_size);
+  inline-size: var(--popup_text_size, calc(14.625rem + ((1vw - 3.75px) * 0)));
 }
 
 .close-button_form {
@@ -438,20 +426,12 @@ dialog::backdrop {
 
 .close-button {
   text-transform: uppercase;
-  min-block-size: var(--close_button_size_block);
+  min-block-size: var(--close_button_size_block, 2.639vh);
   inline-size: 100%;
   padding-top: 3%;
   padding-bottom: 3%;
 }
 
-.close-button:focus {
-  outline: none;
-}
-
-.close-button:focus-visible {
-  box-shadow: 2px 2px 0 var(--accent_color);
-}
-
 .close-button:hover {
-  color: var(--main_color);
+  color: var(--main_color, #fff);
 }

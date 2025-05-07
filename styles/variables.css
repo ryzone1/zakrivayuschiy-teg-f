@@ -1,8 +1,8 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     /*Все что касается шрифтов */
-    --regular_font: 'Inter Regular';
-    --accent_font: 'Press Start 2P Regular';
+    --regular_font: 'Inter', system-ui, Arial, sans-serif;
+    --accent_font: 'PressStart2P', Impact, fantasy;
     --text_weight: 400;
     --title_weight: 700;
     --heading_font_size: clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem);
@@ -11,7 +11,7 @@
     --button_size: 0.875rem;
     /*Отступы */
     --header_gap: 1.25rem;
-    --page_top_margin: 7.083vh;
+    --page_top_margin: 100px;
     --header_padding_top_bottom: 8.9%;
     --header_padding_left_right: 8.4%;
     --header_cards_gap: 10.417vh;
@@ -24,7 +24,7 @@
     --button_gap: 7px;
     --section_gap: 5.208vh;
     --section_bottom_gap: 10.417vh;
-    --decoration_text_paddings: 1.736vh;
+    --decoration_text_paddings: 2.4vh;
     --popup_padding_tb: 3.125vh;
     --popup_padding_lr: 3.125vh;
     --popup_content_gap: 1.389vw;
